@@ -77,12 +77,12 @@
       ];
     };
 
-    # --- New: installer config ---
-    nixosConfigurations.hilbert-space-live = nixpkgs.lib.nixosSystem {
+        # ───── System Definitions ─────────────────────────────────────────
+    nixosConfigurations.hilbert-space = nixpkgs.lib.nixosSystem {
      
       modules = [
         # Configuration
-        ./hosts/hilbert-space-mobile/configuration.nix
+        ./hosts/hilbert-space/configuration.nix
         
         # Users
         ./users/dhilbert/dhilbert.nix
@@ -98,14 +98,8 @@
           home-manager.users.dhilbert = import ./users/dhilbert/home.nix;
         }
         
-        { networking.hostName = "hilbert-space-live"; }
+        { networking.hostName = "hilbert-space"; }
       ];
-
-      imports = [
-        "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-      ];
-
-      nixpkgs.hostPlatform = "x86_64-linux";
     };
   };
 }
