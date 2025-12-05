@@ -9,7 +9,7 @@
   imports = [
       # Package Configuration
       ../../modules/home/packages.nix
-      ../../modules/dotfiles/dotfiles.nix
+      ../../modules/home/dotfiles/dotfiles.nix
   ];
   programs.home-manager.enable = true;
 
