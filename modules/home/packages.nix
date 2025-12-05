@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.packages = [
     # Audio
@@ -43,4 +43,15 @@
     pkgs.protonup-qt
     pkgs.lutris
   ];
+
+    xdg.desktopEntries."youtube-music" = {
+      name = "YouTube Music";
+      comment = "YouTube Music web app";
+      exec = "${pkgs.brave}/bin/brave --app=https://music.youtube.com/ --new-window --user-data-dir=${config.xdg.dataHome}/chromium-ytmusic --class=YouTubeMusic --ozone-platform=wayland --enable-features=UseOzonePlatform";
+      terminal = false;
+      type = "Application";
+      categories = [ "AudioVideo" "Player" ];
+      # Put a matching icon file in ~/.local/share/icons/youtube-music.png if you like
+      icon = "youtube-music";
+  };
 }
