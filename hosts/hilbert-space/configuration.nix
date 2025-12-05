@@ -10,7 +10,7 @@
 
       # System modules
       ../../modules/system/boot.nix
-      ../../modules/system/hardware.nix
+      ../../modules/system/hardware-nvidia.nix
       ../../modules/system/services.nix
       ../../modules/system/locale.nix
       ../../modules/system/security.nix
