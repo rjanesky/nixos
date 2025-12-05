@@ -10,6 +10,8 @@
       # Package Configuration
       ../../modules/home/packages.nix
       ../../modules/home/dotfiles/dotfiles.nix
+
+      ../../modules/home/ui/cursor.nix
   ];
   programs.home-manager.enable = true;
 
