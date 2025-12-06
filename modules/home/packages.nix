@@ -7,6 +7,9 @@
     # Browser
     pkgs.brave
 
+    # Bittorrent
+    pkgs.transmission_4-gtk
+
     # Communication
     pkgs.discord
 
@@ -19,6 +22,9 @@
 
     # Gaming
     pkgs.steam
+
+    # Password Management
+    pkgs.bitwarden-desktop
 
     # Terminal 
     pkgs.foot
@@ -38,6 +44,10 @@
 
     # Version Control
     pkgs.gh
+
+    # VPN
+    pkgs.wireguard-tools 
+    pkgs.protonvpn-gui
 
     # Windows Compatability
     pkgs.protonup-qt
