@@ -25,9 +25,10 @@
       ../../modules/system/features/display-manager.nix
     ];
   
-  features.niri-desktop.enable = true;
   features.hypr-desktop.enable = true;
   features.display-manager.enable = true;
+
+  boot.initrd.luks.devices."luks-5a02de2c-5ef7-4ea2-b405-a9987144cde9".device = "/dev/disk/by-uuid/5a02de2c-5ef7-4ea2-b405-a9987144cde9";
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }

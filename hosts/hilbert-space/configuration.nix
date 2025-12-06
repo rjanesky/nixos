@@ -27,5 +27,7 @@
   features.hypr-desktop.enable = true;
   features.display-manager.enable = true;
 
+  boot.initrd.luks.devices."luks-622ace97-1f45-4926-92fb-117ee1d697d4".device = "/dev/disk/by-uuid/622ace97-1f45-4926-92fb-117ee1d697d4";
+
   system.stateVersion = "25.05"; # Did you read the comment?
 }
