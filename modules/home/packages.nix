@@ -12,6 +12,7 @@
 
     # Communication
     pkgs.discord
+    pkgs.session-desktop
 
     # Editor
     pkgs.vscodium
