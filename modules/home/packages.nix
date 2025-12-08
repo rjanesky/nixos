@@ -26,6 +26,9 @@
     # Password Management
     pkgs.bitwarden-desktop
 
+    # Media
+    pkgs.cava
+
     # Terminal 
     pkgs.foot
 

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [ 
@@ -22,10 +22,18 @@
       # features
       ../../modules/system/features/hypr-desktop-features.nix
       ../../modules/system/features/display-manager.nix
+
+      # Quickshell
+      inputs.dankMaterialShell.nixosModules.greeter
     ];
   
   features.hypr-desktop.enable = true;
-  features.display-manager.enable = true;
+  #features.display-manager.enable = true;
+
+  programs.dankMaterialShell.greeter = {
+    enable = true;
+    compositor.name = "hyprland";  # Or "hyprland" or "sway"
+  };
 
   boot.initrd.luks.devices."luks-622ace97-1f45-4926-92fb-117ee1d697d4".device = "/dev/disk/by-uuid/622ace97-1f45-4926-92fb-117ee1d697d4";
 

@@ -4,6 +4,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,6 +66,8 @@
     # ───── System Definitions ─────────────────────────────────────────
     nixosConfigurations.hilbert-space-mobile = nixpkgs.lib.nixosSystem {
      
+      specialArgs = { inherit inputs; };
+
       modules = [
         # Configuration
         ./hosts/hilbert-space-mobile/configuration.nix
@@ -80,6 +93,8 @@
         # ───── System Definitions ─────────────────────────────────────────
     nixosConfigurations.hilbert-space = nixpkgs.lib.nixosSystem {
      
+      specialArgs = { inherit inputs; };
+
       modules = [
         # Configuration
         ./hosts/hilbert-space/configuration.nix

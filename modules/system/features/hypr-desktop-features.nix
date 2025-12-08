@@ -14,19 +14,9 @@ in
 
       pkgs.nautilus
 
-      #pkgs.swaylock-effects
-
-      pkgs.hyprlock
-      pkgs.hyprpaper
-
       # logout / power management
       pkgs.wlogout
     ];
-
-    # TODO: Declare script used to toggle waybar visibility
-    programs.waybar = {
-      enable = true;
-    };
 
     xdg.portal = {
       enable = true;
@@ -47,7 +37,5 @@ in
 
     # Enable performance optimizations for gaming
     programs.gamemode.enable = true;
-
-    #security.pam.services.swaylock = {};
   };
 }
