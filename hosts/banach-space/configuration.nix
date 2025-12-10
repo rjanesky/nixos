@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [ 
@@ -18,11 +18,15 @@
       ../../modules/system/packages.nix
       ../../modules/system/fonts.nix
       ../../modules/system/nix-settings.nix
+      ../../modules/system/power-profiles.nix
 
       # features
       ../../modules/system/features/niri-desktop-features.nix
       ../../modules/system/features/hypr-desktop-features.nix
       ../../modules/system/features/display-manager.nix
+
+     # greeter
+     inputs.dankMaterialShell.nixosModules.greeter
     ];
   
   features.hypr-desktop.enable = true;
