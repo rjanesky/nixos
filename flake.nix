@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; 
 
     dgop = {
       url = "github:AvengeMedia/dgop";
@@ -90,7 +91,33 @@
       ];
     };
 
-        # ───── System Definitions ─────────────────────────────────────────
+    nixosConfigurations.banach-space = nixpkgs.lib.nixosSystem {
+     
+      specialArgs = { inherit inputs; };
+
+      modules = [
+        # Configuration
+        ./hosts/banach-space/configuration.nix
+        
+        # Users
+        ./users/dhilbert/dhilbert.nix
+
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;  
+
+          # Args exposed specifically to HM modules:
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+
+          home-manager.users.dhilbert = import ./users/dhilbert/home.nix;
+        }
+        
+        { networking.hostName = "banach-space"; }
+      ];
+    };
+
+    # ───── System Definitions ─────────────────────────────────────────
     nixosConfigurations.hilbert-space = nixpkgs.lib.nixosSystem {
      
       specialArgs = { inherit inputs; };
