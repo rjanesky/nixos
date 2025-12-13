@@ -8,8 +8,6 @@
     gvfs.enable = true;
     udisks2.enable = true;
 
-    # SSH Configuration
-    openssh.enable = false;
     
     # Audio Configuration
     pulseaudio.enable = false;
@@ -40,6 +38,11 @@
   };
 
   services.flatpak.enable = true;
+
+  services.xrdp = {
+    enable = true;
+    openFirewall = false;
+  };
 
   # Configure GC Timer
   systemd.timers."nix-gc" = {

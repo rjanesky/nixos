@@ -2,26 +2,24 @@
 {
   networking.firewall = {
     enable = true;
-    allowPing = false;
-  };
 
-  services.openssh = {
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      X11Forwarding = false;
-      AllowTcpForwarding = "no";
-      ClientAliveInterval = 300;
-      ClientAliveCountMax = 2;
-      Compression = "no";
-      AllowAgentForwarding = false;
+    interfaces.tailscale0 = {
+      allowedTCPPorts = [ 22 ];
     };
-
-    hostKeys = [
-      { path = "/etc/ssh/ssh_host_ed25519_key"; type = "ed25519"; }
-    ];
   };
+
+services.openssh = {
+  enable = true;
+
+  settings = {
+    PasswordAuthentication = false;
+    KbdInteractiveAuthentication = false;
+    PermitRootLogin = "no";
+    X11Forwarding = false;
+  };
+
+  openFirewall = false;
+};
 
   boot.kernelParams = [ "intel_iommu=on" "amd_iommu=on" "iommu.strict=1" ];
 
