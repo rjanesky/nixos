@@ -17,6 +17,7 @@
     # Crypto
     pkgs.monero-gui
     pkgs.monero-cli
+    pkgs.ledger-live-desktop
 
     # Editor
     pkgs.vscodium
@@ -43,6 +44,8 @@
 
     # Tools
     pkgs.cmatrix
+    pkgs.cowsay
+    pkgs.fortune
 
     # Photography
     pkgs.darktable

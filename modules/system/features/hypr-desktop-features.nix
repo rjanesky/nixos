@@ -9,6 +9,7 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       pkgs.fuzzel
+      pkgs.libnotify
       pkgs.mako
       pkgs.foot
 

@@ -24,5 +24,9 @@
 
     # X Compatibility
     xwayland-satellite
+
+    # Power Management
+    acpi
+    bat
   ];
 }

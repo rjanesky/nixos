@@ -47,4 +47,11 @@
     yubikey-personalization
     pam_u2f
   ];
+
+  # Crypto
+  hardware.ledger.enable = true;
+
+  services.udev.packages = [
+    pkgs.ledger-udev-rules
+  ];
 }
