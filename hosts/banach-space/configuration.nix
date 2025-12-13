@@ -20,6 +20,7 @@
       ../../modules/system/nix-settings.nix
       ../../modules/system/power-profiles.nix
       ../../modules/system/logging.nix
+       ../../modules/system/tailscale.nix
 
       # features
       ../../modules/system/features/niri-desktop-features.nix
