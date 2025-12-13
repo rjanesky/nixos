@@ -18,6 +18,7 @@
       ../../modules/system/packages.nix
       ../../modules/system/fonts.nix
       ../../modules/system/nix-settings.nix
+      ../../modules/system/logging.nix
 
       # features
       ../../modules/system/features/hypr-desktop-features.nix
