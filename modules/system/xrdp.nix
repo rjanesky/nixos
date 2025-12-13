@@ -14,8 +14,6 @@
     home = "/home/rdp";
   };
 
-  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 3389 ];
-
   environment.systemPackages = with pkgs; [
     xorg.xauth
     xorg.xhost
