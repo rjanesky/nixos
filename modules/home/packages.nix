@@ -52,7 +52,9 @@
 
     # Photography
     pkgs.darktable
-    pkgs.krita
+  
+    # RDP
+    pkgs.remmina
 
     # Utilities
     pkgs.htop
