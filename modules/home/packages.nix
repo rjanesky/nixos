@@ -34,6 +34,9 @@
 
     # Media
     pkgs.cava
+    pkgs.yewtube
+    pkgs.vlc
+    pkgs.ffmpeg
 
     # Notes
     pkgs.logseq
