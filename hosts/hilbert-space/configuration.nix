@@ -20,7 +20,6 @@
       ../../modules/system/nix-settings.nix
       ../../modules/system/logging.nix
       ../../modules/system/tailscale.nix
-      ../../modules/system/xrdp.nix
 
       # features
       ../../modules/system/features/hypr-desktop-features.nix
@@ -29,7 +28,7 @@
       # Quickshell
       inputs.dankMaterialShell.nixosModules.greeter
     ];
-  
+
   features.hypr-desktop.enable = true;
   #features.display-manager.enable = true;
 
