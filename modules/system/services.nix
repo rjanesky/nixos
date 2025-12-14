@@ -37,13 +37,6 @@
     clickMethod = "clickfinger";
   };
 
-  services.flatpak.enable = true;
-
-  services.xrdp = {
-    enable = true;
-    openFirewall = false;
-  };
-
   # Configure GC Timer
   systemd.timers."nix-gc" = {
     wantedBy = [ "timers.target" ];
