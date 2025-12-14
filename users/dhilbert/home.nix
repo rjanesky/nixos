@@ -19,6 +19,8 @@
 
   programs.home-manager.enable = true;
 
+  programs.fish.enable = true;
+
   programs.dankMaterialShell = {
     enable = true;
 
