@@ -30,12 +30,23 @@
     ];
 
   features.hypr-desktop.enable = true;
-  #features.display-manager.enable = true;
 
   programs.dankMaterialShell.greeter = {
     enable = true;
     compositor.name = "hyprland";  # Or "hyprland" or "sway"
   };
+
+  # Provide a lightweight desktop for XRDP sessions
+  services.xserver.enable = true;
+  services.xrdp.defaultWindowManager = "${pkgs.xfce.xfce4-session}/bin/startxfce4";
+  environment.systemPackages = with pkgs; [
+    xfce.xfce4-session
+    xfce.xfce4-panel
+    xfce.xfce4-settings
+    xfce.thunar
+    xfce.xfce4-terminal
+    xfce.xfce4-appfinder
+  ];
 
   boot.initrd.luks.devices."luks-622ace97-1f45-4926-92fb-117ee1d697d4".device = "/dev/disk/by-uuid/622ace97-1f45-4926-92fb-117ee1d697d4";
 
