@@ -128,6 +128,7 @@
         
         # Users
         ./users/dhilbert/dhilbert.nix
+        ./users/dhilbert-remote/dhilbert-remote.nix
 
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;  
@@ -138,6 +139,7 @@
           };
 
           home-manager.users.dhilbert = import ./users/dhilbert/home.nix;
+          home-manager.users.dhilbert = import ./users/dhilbert-remote/home.nix;
         }
         
         { networking.hostName = "hilbert-space"; }
