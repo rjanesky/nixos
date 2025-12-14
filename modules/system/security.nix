@@ -21,8 +21,6 @@
     openFirewall = false;
   };
 
-  services.openssh.settings.DenyUsers = [ "rdp" ];
-
   boot.kernelParams = [ "intel_iommu=on" "amd_iommu=on" "iommu.strict=1" ];
 
   boot.kernel.sysctl = {
