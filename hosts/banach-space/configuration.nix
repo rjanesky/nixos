@@ -21,6 +21,7 @@
       ../../modules/system/power-profiles.nix
       ../../modules/system/logging.nix
        ../../modules/system/tailscale.nix
+       ../../modules/system/tlp-profile.nix
 
       # features
       ../../modules/system/features/niri-desktop-features.nix
