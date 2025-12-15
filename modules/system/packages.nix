@@ -2,6 +2,9 @@
 {
   # System Packages
   environment.systemPackages = with pkgs; [        
+    # Audio
+    pulseaudio
+    
     # Text Editors
     nano
 
@@ -28,5 +31,8 @@
     # Power Management
     acpi
     bat
+
+    # RDP
+    xrdp
   ];
 }

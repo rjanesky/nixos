@@ -139,7 +139,7 @@
           };
 
           home-manager.users.dhilbert = import ./users/dhilbert/home.nix;
-          home-manager.users.dhilbert = import ./users/dhilbert-remote/home.nix;
+          home-manager.users.dhilbert-remote = import ./users/dhilbert-remote/home.nix;
         }
         
         { networking.hostName = "hilbert-space"; }

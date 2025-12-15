@@ -36,6 +36,20 @@
     compositor.name = "hyprland";  # Or "hyprland" or "sway"
   };
 
+  # Add X11 + XFCE without enabling any display manager
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true;  # no DM
+    #desktopManager.xfce.enable = true;
+  };
+
+  # Enable xrdp and have it start XFCE
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "startxfce4";
+    openFirewall = false;
+  };
+  
   boot.initrd.luks.devices."luks-622ace97-1f45-4926-92fb-117ee1d697d4".device = "/dev/disk/by-uuid/622ace97-1f45-4926-92fb-117ee1d697d4";
 
   system.stateVersion = "25.05"; # Did you read the comment?

@@ -4,7 +4,7 @@
   users.users.dhilbert-remote = {
     isNormalUser = true;
     description = "David Hilbert";
-    extraGroups = [  ];
+    extraGroups = [ "audio"  ];
     packages = with pkgs; [ ];
   };
 }

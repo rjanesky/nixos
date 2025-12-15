@@ -10,7 +10,6 @@
 
     
     # Audio Configuration
-    pulseaudio.enable = false;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -20,13 +19,14 @@
     };
 
     pipewire.extraConfig.pipewire."10-alsa" = {
-      "context.properties" = {
-      "default.clock.allowed-rates" = [ 44100 48000 88200 96000 ];
-      "default.clock.rate" = 44100;
-      "default.clock.quantum" = 1024;
+        "context.properties" = {
+        "default.clock.allowed-rates" = [ 44100 48000 88200 96000 ];
+        "default.clock.rate" = 44100;
+        "default.clock.quantum" = 1024;
+      };
     };
-};
   };
+
 
   services.libinput.enable = true;
   services.libinput.touchpad = {

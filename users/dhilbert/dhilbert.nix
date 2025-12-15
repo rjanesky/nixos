@@ -4,7 +4,7 @@
   users.users.dhilbert = {
     isNormalUser = true;
     description = "David Hilbert";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [ ];
   };
 }
