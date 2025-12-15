@@ -18,7 +18,6 @@
       ../../modules/system/packages.nix
       ../../modules/system/fonts.nix
       ../../modules/system/nix-settings.nix
-      ../../modules/system/power-profiles.nix
       ../../modules/system/logging.nix
        ../../modules/system/tailscale.nix
        ../../modules/system/tlp-profile.nix

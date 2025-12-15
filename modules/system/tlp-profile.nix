@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  services.upower.enable = true;
+  
   services.tlp = {
     enable = true;
 
@@ -10,6 +12,11 @@
 
       # Max charge cap: stop charging at this (%).
       STOP_CHARGE_THRESH_BAT0  = 80;
+    
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
     };
   };
+
+  powerManagement.powertop.enable = true;
 }

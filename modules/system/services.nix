@@ -27,8 +27,6 @@
     };
   };
 
-  services.tlp.enable = true;
-
   services.libinput.enable = true;
   services.libinput.touchpad = {
     # often influences the same libinput settings the compositor reads
