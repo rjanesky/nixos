@@ -9,7 +9,7 @@
       ./hardware-configuration.nix
 
       # System modules
-      ../../modules/system/boot.nix
+      ../../modules/system/boot-zen.nix
       ../../modules/system/hardware.nix
       ../../modules/system/services.nix
       ../../modules/system/locale.nix
