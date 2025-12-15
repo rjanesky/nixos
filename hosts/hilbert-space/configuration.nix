@@ -20,6 +20,7 @@
       ../../modules/system/nix-settings.nix
       ../../modules/system/logging.nix
       ../../modules/system/tailscale.nix
+      ../../modules/system/ollama.nix
 
       # features
       ../../modules/system/features/hypr-desktop-features.nix
