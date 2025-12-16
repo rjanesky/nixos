@@ -4,7 +4,7 @@
     enable = true;
 
     interfaces.tailscale0 = {
-      allowedTCPPorts = [ 22 3389 ];
+      allowedTCPPorts = [ 22 3389 11434 ];
     };
 
     allowedTCPPorts = [ ];
