@@ -21,6 +21,7 @@
       ../../modules/system/logging.nix
       ../../modules/system/tailscale.nix
       ../../modules/system/ollama.nix
+      ../../modules/system/docker.nix
 
       # features
       ../../modules/system/features/hypr-desktop-features.nix
@@ -51,6 +52,20 @@
     openFirewall = false;
   };
   
+
+  environment.etc."searxng/settings.yml".text = ''
+    use_default_settings: true
+
+    server:
+      # Must be set; can be any long random string
+      secret_key: "CHANGE_ME_TO_A_LONG_RANDOM_STRING"
+
+    search:
+      formats:
+        - html
+        - json
+  '';
+
   boot.initrd.luks.devices."luks-622ace97-1f45-4926-92fb-117ee1d697d4".device = "/dev/disk/by-uuid/622ace97-1f45-4926-92fb-117ee1d697d4";
 
   system.stateVersion = "25.05"; # Did you read the comment?
